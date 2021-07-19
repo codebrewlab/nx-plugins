@@ -1,0 +1,78 @@
+{
+  "version": 2,
+  "projects": {
+    "aws-cdk": {
+      "root": "packages/aws-cdk",
+      "sourceRoot": "packages/aws-cdk/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["packages/aws-cdk/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/packages/aws-cdk"],
+          "options": {
+            "jestConfig": "packages/aws-cdk/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "executor": "@nrwl/node:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/packages/aws-cdk",
+            "tsConfig": "packages/aws-cdk/tsconfig.lib.json",
+            "packageJson": "packages/aws-cdk/package.json",
+            "main": "packages/aws-cdk/src/index.ts",
+            "assets": [
+              "packages/aws-cdk/*.md",
+              {
+                "input": "./packages/aws-cdk/src",
+                "glob": "**/!(*.ts)",
+                "output": "./src"
+              },
+              {
+                "input": "./packages/aws-cdk/src",
+                "glob": "**/*.d.ts",
+                "output": "./src"
+              },
+              {
+                "input": "./packages/aws-cdk",
+                "glob": "generators.json",
+                "output": "."
+              },
+              {
+                "input": "./packages/aws-cdk",
+                "glob": "executors.json",
+                "output": "."
+              }
+            ]
+          }
+        }
+      }
+    },
+    "aws-cdk-e2e": {
+      "root": "e2e/aws-cdk-e2e",
+      "projectType": "application",
+      "sourceRoot": "e2e/aws-cdk-e2e/src",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/nx-plugin:e2e",
+          "options": {
+            "target": "aws-cdk:build",
+            "npmPackageName": "@codebrew/aws-cdk",
+            "pluginOutputPath": "dist/packages/aws-cdk",
+            "jestConfig": "e2e/aws-cdk-e2e/jest.config.js"
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/workspace"
+  }
+}

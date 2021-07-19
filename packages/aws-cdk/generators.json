@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "name": "aws-cdk",
+  "version": "0.0.1",
+  "generators": {
+    "aws-cdk": {
+      "factory": "./src/generators/aws-cdk/generator",
+      "schema": "./src/generators/aws-cdk/schema.json",
+      "description": "aws-cdk generator"
+    }
+  }
+}

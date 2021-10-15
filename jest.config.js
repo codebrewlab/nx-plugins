@@ -1,3 +1,3 @@
 module.exports = {
-  projects: ['<rootDir>/packages/aws-cdk', '<rootDir>/e2e/aws-cdk-e2e'],
+  projects: ['<rootDir>/packages/nx-aws-cdk', '<rootDir>/e2e/nx-aws-cdk-e2e'],
 };

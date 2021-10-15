@@ -1,22 +1,22 @@
 {
   "version": 2,
   "projects": {
-    "aws-cdk": {
-      "root": "packages/aws-cdk",
-      "sourceRoot": "packages/aws-cdk/src",
+    "nx-aws-cdk": {
+      "root": "packages/nx-aws-cdk",
+      "sourceRoot": "packages/nx-aws-cdk/src",
       "projectType": "library",
       "targets": {
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["packages/aws-cdk/**/*.ts"]
+            "lintFilePatterns": ["packages/nx-aws-cdk/**/*.ts"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/packages/aws-cdk"],
+          "outputs": ["coverage/packages/nx-aws-cdk"],
           "options": {
-            "jestConfig": "packages/aws-cdk/jest.config.js",
+            "jestConfig": "packages/nx-aws-cdk/jest.config.js",
             "passWithNoTests": true
           }
         },
@@ -24,29 +24,29 @@
           "executor": "@nrwl/node:package",
           "outputs": ["{options.outputPath}"],
           "options": {
-            "outputPath": "dist/packages/aws-cdk",
-            "tsConfig": "packages/aws-cdk/tsconfig.lib.json",
-            "packageJson": "packages/aws-cdk/package.json",
-            "main": "packages/aws-cdk/src/index.ts",
+            "outputPath": "dist/packages/nx-aws-cdk",
+            "tsConfig": "packages/nx-aws-cdk/tsconfig.lib.json",
+            "packageJson": "packages/nx-aws-cdk/package.json",
+            "main": "packages/nx-aws-cdk/src/index.ts",
             "assets": [
-              "packages/aws-cdk/*.md",
+              "packages/nx-aws-cdk/*.md",
               {
-                "input": "./packages/aws-cdk/src",
+                "input": "./packages/nx-aws-cdk/src",
                 "glob": "**/!(*.ts)",
                 "output": "./src"
               },
               {
-                "input": "./packages/aws-cdk/src",
+                "input": "./packages/nx-aws-cdk/src",
                 "glob": "**/*.d.ts",
                 "output": "./src"
               },
               {
-                "input": "./packages/aws-cdk",
+                "input": "./packages/nx-aws-cdk",
                 "glob": "generators.json",
                 "output": "."
               },
               {
-                "input": "./packages/aws-cdk",
+                "input": "./packages/nx-aws-cdk",
                 "glob": "executors.json",
                 "output": "."
               }
@@ -55,18 +55,18 @@
         }
       }
     },
-    "aws-cdk-e2e": {
-      "root": "e2e/aws-cdk-e2e",
+    "nx-aws-cdk-e2e": {
+      "root": "e2e/nx-aws-cdk-e2e",
       "projectType": "application",
-      "sourceRoot": "e2e/aws-cdk-e2e/src",
+      "sourceRoot": "e2e/nx-aws-cdk-e2e/src",
       "targets": {
         "e2e": {
           "executor": "@nrwl/nx-plugin:e2e",
           "options": {
-            "target": "aws-cdk:build",
-            "npmPackageName": "@codebrew/aws-cdk",
-            "pluginOutputPath": "dist/packages/aws-cdk",
-            "jestConfig": "e2e/aws-cdk-e2e/jest.config.js"
+            "target": "nx-aws-cdk:build",
+            "npmPackageName": "@codebrew/nx-aws-cdk",
+            "pluginOutputPath": "dist/packages/nx-aws-cdk",
+            "jestConfig": "e2e/nx-aws-cdk-e2e/jest.config.js"
           }
         }
       }

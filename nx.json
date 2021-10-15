@@ -27,12 +27,12 @@
     ]
   },
   "projects": {
-    "aws-cdk": {
+    "nx-aws-cdk": {
       "tags": []
     },
-    "aws-cdk-e2e": {
+    "nx-aws-cdk-e2e": {
       "tags": [],
-      "implicitDependencies": ["aws-cdk"]
+      "implicitDependencies": ["nx-aws-cdk"]
     }
   },
   "workspaceLayout": {

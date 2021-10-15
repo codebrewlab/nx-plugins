@@ -1,35 +1,38 @@
 {
-  "name": "codebrew",
-  "version": "0.0.0",
+  "name": "@codebrew/nx-plugins",
+  "description": "A collection of third-party Nx plugins",
+  "author": {
+    "name": "Devin Kwon",
+    "email": "tienne89@gmail.com"
+  },
   "license": "MIT",
+  "homepage": "https://github.com/codebrewlab/nx-plugins",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codebrewlab/nx-plugins.git"
+  },
   "scripts": {
     "nx": "nx",
+    "lint-stage": "lint-staged",
+    "commitlint": "commitlint",
+    "is-ci": "is-ci",
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
     "lint": "nx workspace-lint && nx lint",
     "e2e": "nx e2e",
-    "affected:apps": "nx affected:apps",
-    "affected:libs": "nx affected:libs",
-    "affected:build": "nx affected:build",
-    "affected:e2e": "nx affected:e2e",
-    "affected:test": "nx affected:test",
-    "affected:lint": "nx affected:lint",
-    "affected:dep-graph": "nx affected:dep-graph",
-    "affected": "nx affected",
     "format": "nx format:write",
-    "format:write": "nx format:write",
-    "format:check": "nx format:check",
-    "update": "nx migrate latest",
-    "workspace-generator": "nx workspace-generator",
-    "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "build:aws-cdk": "nx build nx-aws-cdk",
+    "link:aws-cdk": "cd dist/packages/nx-aws-cdk && npm link",
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
     "tslib": "^2.0.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^13.2.1",
+    "@commitlint/config-conventional": "^13.2.0",
     "@nrwl/cli": "12.5.8",
     "@nrwl/devkit": "12.5.8",
     "@nrwl/eslint-plugin-nx": "12.5.8",
@@ -46,11 +49,19 @@
     "dotenv": "8.2.0",
     "eslint": "7.22.0",
     "eslint-config-prettier": "8.1.0",
+    "husky": "^7.0.0",
+    "is-ci": "^3.0.0",
     "jest": "27.0.3",
+    "lint-staged": "^11.2.3",
     "prettier": "^2.3.1",
     "ts-jest": "27.0.3",
     "ts-node": "~9.1.1",
     "tslib": "^2.0.0",
     "typescript": "~4.2.4"
+  },
+  "lint-staged": {
+    "*.{js,json,css,scss,md,ts,html,graphql}": [
+      "npm run format --uncommitted"
+    ]
   }
 }

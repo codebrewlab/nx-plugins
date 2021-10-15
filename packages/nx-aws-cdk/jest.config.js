@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'aws-cdk',
+  displayName: 'nx-aws-cdk',
   preset: '../../jest.preset.js',
   globals: {
     'ts-jest': {
@@ -11,5 +11,5 @@ module.exports = {
     '^.+\\.[tj]sx?$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/packages/aws-cdk',
+  coverageDirectory: '../../coverage/packages/nx-aws-cdk',
 };

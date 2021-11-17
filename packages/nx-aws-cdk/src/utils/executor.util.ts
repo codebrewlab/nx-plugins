@@ -4,13 +4,13 @@ import { DeployExecutorSchema } from '../executors/deploy/schema';
 import { ParsedExecutorInterface } from '../interfaces/parsed-executor.interface';
 import { logger } from '@nrwl/devkit';
 
-export const executorPropKeys = ['app', 'stacks'];
+export const executorPropKeys = ['stacks'];
 export const LARGE_BUFFER = 1024 * 1000000;
 
 export function parseArgs(options: DeployExecutorSchema): Record<string, string> {
   const keys = Object.keys(options);
   return keys
-    .filter((prop) => executorPropKeys.indexOf(prop) >= 0)
+    .filter((prop) => executorPropKeys.indexOf(prop) < 0)
     .reduce((acc, key) => ((acc[key] = options[key]), acc), {});
 }
 
@@ -21,8 +21,8 @@ export function createCommand(command: string, options: ParsedExecutorInterface)
     commands.push(options.stacks);
   }
 
-  if (typeof options.app === 'string') {
-    commands.push(`--app ${options.app}`);
+  for (const arg in options.parseArgs) {
+    commands.push(`--${arg} ${options.parseArgs[arg]}`);
   }
 
   return commands.join(' ');

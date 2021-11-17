@@ -1,1 +1,3 @@
-export interface DestroyExecutorSchema {} // eslint-disable-line
+export interface DestroyExecutorSchema {
+  stacks?: string;
+}

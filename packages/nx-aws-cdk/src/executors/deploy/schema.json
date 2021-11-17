@@ -4,6 +4,11 @@
   "title": "deploy executor",
   "description": "",
   "type": "object",
-  "properties": {},
+  "properties": {
+    "stacks": {
+      "type": "string",
+      "description": "use deploy named STACKS"
+    }
+  },
   "required": []
 }

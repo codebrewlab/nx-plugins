@@ -49,4 +49,21 @@ describe('nx-aws-cdk deploy Executor', () => {
 
     expect(logger.info).toHaveBeenLastCalledWith(`Executing command: cdk deploy ${stackName}`);
   });
+
+  it('run cdk deploy command context options', async () => {
+    const option: any = Object.assign({}, options);
+    const contextOptionString = 'key=value';
+    option['context'] = contextOptionString;
+    await executor(option, context);
+
+    expect(childProcess.exec).toHaveBeenCalledWith(
+      `cdk deploy --context ${contextOptionString}`,
+      expect.objectContaining({
+        env: process.env,
+        maxBuffer: LARGE_BUFFER,
+      })
+    );
+
+    expect(logger.info).toHaveBeenLastCalledWith(`Executing command: cdk deploy --context ${contextOptionString}`);
+  });
 });

@@ -8,7 +8,6 @@ import { ParsedExecutorInterface } from '../../interfaces/parsed-executor.interf
 export interface ParsedDeployExecutorOption extends ParsedExecutorInterface {
   parseArgs?: Record<string, string>;
   stacks?: string[];
-  app?: string;
   sourceRoot: string;
   root: string;
 }
@@ -31,9 +30,10 @@ function normalizeOptions(options: DeployExecutorSchema, context: ExecutorContex
   const parsedArgs = parseArgs(options);
   let stacks;
 
-  if (Object.prototype.hasOwnProperty.call(parsedArgs, 'stacks')) {
-    stacks = parsedArgs.stacks;
+  if (Object.prototype.hasOwnProperty.call(options, 'stacks')) {
+    stacks = options.stacks;
   }
+
   const { sourceRoot, root } = context?.workspace?.projects[context.projectName];
 
   return {

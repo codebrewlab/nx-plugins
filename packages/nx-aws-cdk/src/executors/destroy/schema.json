@@ -4,6 +4,11 @@
   "title": "Destroy executor",
   "description": "",
   "type": "object",
-  "properties": {},
+  "properties": {
+    "stacks": {
+      "type": "string",
+      "description": "use destroy named STACKS"
+    }
+  },
   "required": []
 }

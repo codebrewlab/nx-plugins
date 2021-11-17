@@ -4,7 +4,7 @@ import * as path from 'path';
 import { logger } from '@nrwl/devkit';
 
 import { DestroyExecutorSchema } from './schema';
-import executor from './destory';
+import executor from './destroy';
 import { LARGE_BUFFER } from '../../utils/executor.util';
 import { mockExecutorContext } from '../../utils/testing';
 

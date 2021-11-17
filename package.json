@@ -28,7 +28,6 @@
   },
   "private": true,
   "dependencies": {
-    "aws-cdk": "^1.132.0",
     "tslib": "^2.0.0"
   },
   "devDependencies": {

@@ -28,7 +28,7 @@ An Nx plugin for developing [aws-cdk](https://docs.aws.amazon.com/cdk/latest/gui
 npm install --save-dev @codebrew/nx-aws-cdk
 
 # yarn
-yarn add --save-dev @codebrew/nx-aws-cdk
+yarn add --dev @codebrew/nx-aws-cdk
 ```
 
 ## Usage

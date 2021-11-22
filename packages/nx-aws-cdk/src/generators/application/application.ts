@@ -73,7 +73,7 @@ async function addLintingToApplication(tree: Tree, options: NormalizedSchema): P
     linter: options.linter,
     project: options.projectName,
     tsConfigPaths: [joinPathFragments(options.projectRoot, 'tsconfig.*?.json')],
-    eslintFilePatterns: [`${options.projectRoot}/**/*.ts}`],
+    eslintFilePatterns: [`${options.projectRoot}/**/*.ts`],
     skipFormat: true,
     setParserOptionsProject: options.setParserOptionsProject,
   });

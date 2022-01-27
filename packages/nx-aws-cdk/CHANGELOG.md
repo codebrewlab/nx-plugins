@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.2](https://github.com/codebrewlab/nx-plugins/compare/v1.0.0...v1.0.1) (2021-11-22)
+
+### Bug Fixes
+
+- **aws-cdk:** fix destroy executor ([#3](https://github.com/codebrewlab/nx-plugins/issues/3))
+
 ## [1.0.1](https://github.com/codebrewlab/nx-plugins/compare/v1.0.0...v1.0.1) (2021-11-22)
 
 ### Bug Fixes

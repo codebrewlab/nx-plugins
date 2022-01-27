@@ -7,7 +7,7 @@
       "description": "build executor"
     },
     "destroy": {
-      "implementation": "./src/executors/destroy/executor",
+      "implementation": "./src/executors/destroy/destroy",
       "schema": "./src/executors/destroy/schema.json",
       "description": "destroy executor"
     }

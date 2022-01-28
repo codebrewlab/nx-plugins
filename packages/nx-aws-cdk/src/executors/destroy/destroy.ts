@@ -15,7 +15,7 @@ export interface ParsedDestroyExecutorOption extends ParsedExecutorInterface {
 
 export default async function runExecutor(options: DestroyExecutorSchema, context: ExecutorContext) {
   const normalizedOptions = normalizeOptions(options, context);
-  const result = runDestroy(normalizedOptions, context);
+  const result = await runDestroy(normalizedOptions, context);
 
   return {
     success: result,

@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.3](https://github.com/codebrewlab/nx-plugins/compare/v1.0.2...v1.0.3) (2022-01-28)
+
+### Bug Fixes
+
+- **aws-cdk:** executor stdin fix ([b5ef5c7](https://github.com/codebrewlab/nx-plugins/commit/b5ef5c70283fc4652d86138b0470d40dba055ec9))
+- **aws-cdk:** miss await in destroy executor ([23e1815](https://github.com/codebrewlab/nx-plugins/commit/23e18151f5075ab32ef2c8f0a86712806f267ae1))
+
 ## [1.0.2](https://github.com/codebrewlab/nx-plugins/compare/v1.0.0...v1.0.1) (2021-11-22)
 
 ### Bug Fixes

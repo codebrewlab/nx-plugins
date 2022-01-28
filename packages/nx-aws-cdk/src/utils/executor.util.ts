@@ -43,9 +43,10 @@ export function runCommandProcess(command: string, cwd: string): Promise<boolean
     process.on('exit', processExitListener);
     process.on('SIGTERM', processExitListener);
 
-    // childProcess.on('error', (err) => {
-    //   reject(err);
-    // });
+    process.stdin.on('data', (data) => {
+      childProcess.stdin.write(data);
+      childProcess.stdin.end();
+    });
 
     childProcess.stdout.on('data', (data) => {
       process.stdout.write(data);
@@ -63,6 +64,9 @@ export function runCommandProcess(command: string, cwd: string): Promise<boolean
       }
 
       process.removeListener('exit', processExitListener);
+
+      process.stdin.end();
+      process.stdin.removeListener('data', processExitListener);
     });
   });
 }

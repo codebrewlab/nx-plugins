@@ -13,7 +13,7 @@ describe('nx-aws-cdk deploy Executor', () => {
   const context = mockExecutorContext('deploy');
 
   beforeEach(async () => {
-    jest.spyOn(logger, 'info');
+    jest.spyOn(logger, 'debug');
     jest.spyOn(childProcess, 'exec');
   });
 
@@ -30,7 +30,7 @@ describe('nx-aws-cdk deploy Executor', () => {
         maxBuffer: LARGE_BUFFER,
       })
     );
-    expect(logger.info).toHaveBeenLastCalledWith(`Executing command: cdk deploy`);
+    expect(logger.debug).toHaveBeenLastCalledWith(`Executing command: cdk deploy`);
   });
 
   it('run cdk deploy command stack', async () => {
@@ -47,7 +47,7 @@ describe('nx-aws-cdk deploy Executor', () => {
       })
     );
 
-    expect(logger.info).toHaveBeenLastCalledWith(`Executing command: cdk deploy ${stackName}`);
+    expect(logger.debug).toHaveBeenLastCalledWith(`Executing command: cdk deploy ${stackName}`);
   });
 
   it('run cdk deploy command context options', async () => {
@@ -64,6 +64,6 @@ describe('nx-aws-cdk deploy Executor', () => {
       })
     );
 
-    expect(logger.info).toHaveBeenLastCalledWith(`Executing command: cdk deploy --context ${contextOptionString}`);
+    expect(logger.debug).toHaveBeenLastCalledWith(`Executing command: cdk deploy --context ${contextOptionString}`);
   });
 });

@@ -14,7 +14,7 @@ describe('nx-aws-cdk Destroy Executor', () => {
   const context = mockExecutorContext('destroy');
 
   beforeEach(async () => {
-    jest.spyOn(logger, 'info');
+    jest.spyOn(logger, 'debug');
     jest.spyOn(childProcess, 'exec');
   });
 
@@ -32,7 +32,7 @@ describe('nx-aws-cdk Destroy Executor', () => {
       })
     );
 
-    expect(logger.info).toHaveBeenLastCalledWith(`Executing command: cdk destroy`);
+    expect(logger.debug).toHaveBeenLastCalledWith(`Executing command: cdk destroy`);
   });
 
   it('run cdk destroy command stack', async () => {
@@ -49,6 +49,6 @@ describe('nx-aws-cdk Destroy Executor', () => {
       })
     );
 
-    expect(logger.info).toHaveBeenLastCalledWith(`Executing command: cdk destroy ${stackName}`);
+    expect(logger.debug).toHaveBeenLastCalledWith(`Executing command: cdk destroy ${stackName}`);
   });
 });

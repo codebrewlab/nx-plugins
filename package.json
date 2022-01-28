@@ -16,8 +16,6 @@
     "lint-stage": "lint-staged",
     "commitlint": "commitlint",
     "is-ci": "is-ci",
-    "start": "nx serve",
-    "build": "nx build",
     "test": "nx test",
     "lint": "nx workspace-lint && nx lint",
     "e2e": "nx e2e",

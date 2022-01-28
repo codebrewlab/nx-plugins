@@ -9,9 +9,6 @@ describe('nx-aws-cdk e2e', () => {
     const plugin = uniq('nx-aws-cdk');
 
     await runNxCommandAsync(`generate @codebrew/nx-aws-cdk:application ${plugin}`);
-
-    const result = await runNxCommandAsync(`deploy ${plugin}`);
-    expect(result.stdout).toContain('Executor deploy ran');
   }, 120000);
 
   describe('--directory', () => {

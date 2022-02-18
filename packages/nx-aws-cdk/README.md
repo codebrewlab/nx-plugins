@@ -35,7 +35,9 @@ yarn add --dev @codebrew/nx-aws-cdk
 
 ### Generate Application
 
-Create Aws Cdk Application
+Create AWS CDK v2 Application
+
+More details on AWS CDK v2 can be found on https://docs.aws.amazon.com/cdk/v2/guide/home.html
 
 ```shell
 nx generate @codebrew/nx-aws-cdk:application myApp
@@ -64,8 +66,8 @@ Options:
 Generated applications expose several functions to the CLI that allow users to deploy, destroy and so on.
 
 ```shell
-nx deploy {Project Name}
-nx destroy {Project Name}
+nx deploy myApp
+nx destroy myApp
 ```
 
 ## Maintainers
@@ -74,7 +76,7 @@ nx destroy {Project Name}
 
 ## Contributing
 
-See [the contributing file](../../contributing.md)!
+See [the contributing file](../../CONTRIBUTING.md)!
 
 PRs accepted.
 

@@ -16,7 +16,7 @@ describe('init', () => {
     await initGenerator(tree, options);
     const packageJson = readJson(tree, 'package.json');
 
-    expect(packageJson.dependencies['@aws-cdk/core']).toBeDefined();
-    expect(packageJson.dependencies['@aws-cdk/assert']).toBeDefined();
+    expect(packageJson.dependencies['aws-cdk-lib']).toBeDefined();
+    expect(packageJson.dependencies['aws-cdk']).toBeDefined();
   });
 });

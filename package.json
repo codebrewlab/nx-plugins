@@ -1,15 +1,14 @@
 {
-  "name": "@codebrew/nx-plugins",
-  "description": "A collection of third-party Nx plugins",
+  "name": "@efacity/nx-plugins",
+  "description": "A collection of third-party Nx plugins based on https://github.com/codebrewlab/nx-plugins by Devin Kwon",
   "author": {
-    "name": "Devin Kwon",
-    "email": "tienne89@gmail.com"
+    "name": "Ruslan Kharitonov"
   },
   "license": "MIT",
-  "homepage": "https://github.com/codebrewlab/nx-plugins",
+  "homepage": "https://github.com/therk/nx-plugins",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codebrewlab/nx-plugins.git"
+    "url": "git+https://github.com/therk/nx-plugins.git"
   },
   "scripts": {
     "nx": "nx",

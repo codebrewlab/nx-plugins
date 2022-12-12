@@ -1,6 +1,6 @@
 # Contributing
 
-PR's are are welcome and encouraged in this repository. Read this document to see how to contribute.
+PR's are welcome and encouraged in this repository. Read this document to see how to contribute.
 
 ## Table of Contents
 
@@ -76,13 +76,13 @@ npm link
 Finally, in the project that you want to test, run:
 
 ```
-yarn link @codebrew/{plugin}
+yarn link @efacity/{plugin}
 ```
 
 Or:
 
 ```
-npm link @codebrew/{plugin}
+npm link @efacity/{plugin}
 ```
 
 # Pull Requests

@@ -78,7 +78,7 @@
           "executor": "@nrwl/nx-plugin:e2e",
           "options": {
             "target": "nx-aws-cdk:build",
-            "npmPackageName": "@codebrew/nx-aws-cdk",
+            "npmPackageName": "@efacity/nx-aws-cdk",
             "pluginOutputPath": "dist/packages/nx-aws-cdk",
             "jestConfig": "e2e/nx-aws-cdk-e2e/jest.config.js"
           }

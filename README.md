@@ -1,15 +1,16 @@
-![NPM](https://img.shields.io/npm/l/@codebrew/nx-aws-cdk)
+![NPM](https://img.shields.io/npm/l/@efacity/nx-aws-cdk)
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
 <hr>
 
-# Codebrew Nx Plugins
+# Efacity Nx Plugins
 
-A collection of third-party Nx plugins.
+A collection of third-party Nx plugins based on Codebrew (https://github.com/codebrewlab/nx-plugins)
+Codebrew no longer maintained the plugin and accepts pull requests to continue the development.
 
 ## Table of Contents
 
-- [Codebrew Nx Plugins](#codebrew-nx-plugins)
+- [AWS CDK Nx Plugins](#aws-cdk-nx-plugins)
   - [Table of Contents](#table-of-contents)
   - [Plugins](#plugins)
   - [Maintainers](#maintainers)
@@ -18,13 +19,13 @@ A collection of third-party Nx plugins.
 
 ## Plugins
 
-| Plugin                                                    | Description                                                                                   |
-| --------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| [`@codebrew/nx-aws-cdk`](./packages/nx-aws-cdk/README.md) | An Nx plugin for developing [aws-cdk](https://docs.aws.amazon.com/cdk/latest/guide/home.html) |
+| Plugin                                                   | Description                                                                                   |
+| -------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| [`@efacity/nx-aws-cdk`](./packages/nx-aws-cdk/README.md) | An Nx plugin for developing [aws-cdk](https://docs.aws.amazon.com/cdk/latest/guide/home.html) |
 
 ## Maintainers
 
-[@tienne](https://github.com/tienne)
+[@efacity](https://github.com/efacity)
 
 ## Contributing
 
@@ -36,4 +37,4 @@ If editing the README, please conform to the [standard-readme](https://github.co
 
 ## License
 
-This project is MIT licensed 2021 David Kwon.
+This project is MIT licensed.

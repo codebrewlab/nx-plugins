@@ -1,5 +1,5 @@
 {
-  "name": "@codebrew/nx-aws-cdk",
+  "name": "@efacity/nx-aws-cdk",
   "version": "2.0.0",
   "main": "src/index.js",
   "generators": "./generators.json",

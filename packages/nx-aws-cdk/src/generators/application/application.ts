@@ -108,11 +108,11 @@ export async function applicationGenerator(host: Tree, options: ApplicationSchem
     sourceRoot: `${normalizedOptions.projectRoot}/src`,
     targets: {
       deploy: {
-        executor: '@codebrew/nx-aws-cdk:deploy',
+        executor: '@efacity/nx-aws-cdk:deploy',
         options: {},
       },
       destroy: {
-        executor: '@codebrew/nx-aws-cdk:destroy',
+        executor: '@efacity/nx-aws-cdk:destroy',
         options: {},
       },
     },

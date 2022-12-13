@@ -12,14 +12,14 @@ export function mockExecutorContext(executorName: string, workspaceVersion = 2):
           root: 'apps/proj',
           targets: {
             test: {
-              executor: `@codebrew/nx-aws-cdk:${executorName}`,
+              executor: `@efacity/nx-aws-cdk:${executorName}`,
             },
           },
         },
       },
     },
     target: {
-      executor: `@codebrew/nx-aws-cdk:${executorName}`,
+      executor: `@efacity/nx-aws-cdk:${executorName}`,
     },
     isVerbose: true,
   };

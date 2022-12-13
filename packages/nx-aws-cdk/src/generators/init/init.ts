@@ -22,8 +22,8 @@ export async function initGenerator(host: Tree, options: InitGeneratorSchema) {
   const installTask = addDependenciesToPackageJson(
     host,
     {
-      '@aws-cdk/core': CDK_VERSION,
-      '@aws-cdk/assert': CDK_VERSION,
+      'aws-cdk': CDK_VERSION,
+      'aws-cdk-lib': CDK_VERSION,
     },
     {
       'eslint-plugin-cdk': CDK_ESLINT_VERSION,

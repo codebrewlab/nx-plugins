@@ -1,5 +1,5 @@
-import * as cdk from '@aws-cdk/core';
+import { App } from 'aws-cdk-lib';
 import { AppStack } from './stacks/app-stack';
 
-const app = new cdk.App();
+const app = new App();
 new AppStack(app, '<%= projectName %>');

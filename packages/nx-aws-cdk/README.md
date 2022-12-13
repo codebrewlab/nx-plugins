@@ -1,15 +1,16 @@
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
-[![@codebrew/nx-aws-cdk](https://img.shields.io/badge/%40codebrew-nx--aws--cdk-green)](https://github.com/codebrewlab/nx-plugins/tree/master/packages/nx-aws-cdk)
+[![@efacity/nx-aws-cdk](https://img.shields.io/badge/%therk-nx--aws--cdk-green)](https://github.com/therk/nx-plugins/tree/master/packages/nx-aws-cdk)
 [![Typescript](https://badgen.net/badge/icon/typescript?icon=typescript&label)](https://www.typescriptlang.org/)
-[![LICENSE](https://img.shields.io/npm/l/@codebrew/nx-aws-cdk.svg)](https://www.npmjs.com/package/@codebrew/nx-aws-cdk)
-[![npm version](https://img.shields.io/npm/v/@codebrew/nx-aws-cdk.svg)](https://www.npmjs.com/package/@codebrew/nx-aws-cdk)
-[![Downloads](https://img.shields.io/npm/dm/@codebrew/nx-aws-cdk.svg)](https://www.npmjs.com/package/@codebrew/nx-aws-cdk)
+[![LICENSE](https://img.shields.io/npm/l/@codebrew/nx-aws-cdk.svg)](https://www.npmjs.com/package/@efacity/nx-aws-cdk)
+[![npm version](https://img.shields.io/npm/v/@codebrew/nx-aws-cdk.svg)](https://www.npmjs.com/package/@efacity/nx-aws-cdk)
+[![Downloads](https://img.shields.io/npm/dm/@codebrew/nx-aws-cdk.svg)](https://www.npmjs.com/package/@efacity/nx-aws-cdk)
 
 <hr>
 
-# @codebrew/nx-aws-cdk
+# @efacity/nx-aws-cdk
 
 An Nx plugin for developing [aws-cdk](https://docs.aws.amazon.com/cdk/latest/guide/home.html)
+Based on !codebrew/nx-aws-cdk
 
 ## Table of Contents
 
@@ -25,29 +26,30 @@ An Nx plugin for developing [aws-cdk](https://docs.aws.amazon.com/cdk/latest/gui
 
 ```shell
 # npm
-npm install --save-dev @codebrew/nx-aws-cdk
+npm install --save-dev @efacity/nx-aws-cdk
 
 # yarn
-yarn add --dev @codebrew/nx-aws-cdk
+yarn add --dev @efacity/nx-aws-cdk
 ```
 
 ## Usage
 
 ### Generate Application
 
-Create Aws Cdk Application
+Create AWS CDK v2 Application
+
+More details on AWS CDK v2 can be found on https://docs.aws.amazon.com/cdk/v2/guide/home.html
 
 ```shell
-nx generate @codebrew/nx-aws-cdk:application myApp
+nx generate @efacity/nx-aws-cdk:application myApp
 ```
 
 you can customize it further by passing these options:
 
 ```
-nx generate @codebrew/nx-aws-cdk:application [name] [options,...]
+nx generate @efacity/nx-aws-cdk:application [name] [options,...]
 
 Options:
-  --name
   --tags                     Add tags to the project (used for linting)
   --directory                A directory where the project is placed
   --skipFormat               Skip formatting files
@@ -64,17 +66,17 @@ Options:
 Generated applications expose several functions to the CLI that allow users to deploy, destroy and so on.
 
 ```shell
-nx deploy {Project Name}
-nx destroy {Project Name}
+nx deploy myApp
+nx destroy myApp
 ```
 
 ## Maintainers
 
-[@tienne](https://github.com/tienne)
+[@efacity](https://github.com/therk)
 
 ## Contributing
 
-See [the contributing file](../../contributing.md)!
+See [the contributing file](../../CONTRIBUTING.md)!
 
 PRs accepted.
 
@@ -82,4 +84,4 @@ If editing the README, please conform to the [standard-readme](https://github.co
 
 ## License
 
-This project is MIT licensed 2021 David Kwon.
+This project is MIT licensed.

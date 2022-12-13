@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@codebrew/nx-aws-cdk": ["packages/nx-aws-cdk/src/index.ts"]
+      "@efacity/nx-aws-cdk": ["packages/nx-aws-cdk/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

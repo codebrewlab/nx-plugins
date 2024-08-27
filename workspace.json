@@ -10,7 +10,8 @@
           "executor": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["packages/nx-aws-cdk/**/*.ts"]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         },
         "test": {
           "executor": "@nrwl/jest:jest",
@@ -21,7 +22,7 @@
           }
         },
         "build": {
-          "executor": "@nrwl/node:package",
+          "executor": "@nrwl/js:tsc",
           "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/packages/nx-aws-cdk",
@@ -67,7 +68,8 @@
             "notesFile": "packages/nx-aws-cdk/CHANGELOG.md"
           }
         }
-      }
+      },
+      "tags": []
     },
     "nx-aws-cdk-e2e": {
       "root": "e2e/nx-aws-cdk-e2e",
@@ -83,10 +85,9 @@
             "jestConfig": "e2e/nx-aws-cdk-e2e/jest.config.js"
           }
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": ["nx-aws-cdk"]
     }
-  },
-  "cli": {
-    "defaultCollection": "@nrwl/workspace"
   }
 }

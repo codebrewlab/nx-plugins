@@ -1,5 +1,5 @@
 import * as path from 'path';
-import type { ExecutorContext } from '@nrwl/devkit';
+import type { ExecutorContext } from '@nx/devkit';
 
 import { DeployExecutorSchema } from './schema';
 import { createCommand, runCommandProcess, parseArgs } from '../../utils/executor.util';

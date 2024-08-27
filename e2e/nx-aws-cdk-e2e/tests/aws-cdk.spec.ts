@@ -1,4 +1,4 @@
-import { checkFilesExist, ensureNxProject, readJson, runNxCommandAsync, uniq } from '@nrwl/nx-plugin/testing';
+import { checkFilesExist, ensureNxProject, readJson, runNxCommandAsync, uniq } from '@nx/plugin/testing';
 
 describe('nx-aws-cdk e2e', () => {
   beforeAll(() => {

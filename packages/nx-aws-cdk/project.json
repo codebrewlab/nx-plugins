@@ -5,14 +5,14 @@
   "projectType": "library",
   "targets": {
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "options": {
         "lintFilePatterns": ["packages/nx-aws-cdk/**/*.ts"]
       },
       "outputs": ["{options.outputFile}"]
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/packages/nx-aws-cdk"],
       "options": {
         "jestConfig": "packages/nx-aws-cdk/jest.config.ts",
@@ -20,7 +20,7 @@
       }
     },
     "build": {
-      "executor": "@nrwl/js:tsc",
+      "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/nx-aws-cdk",
@@ -49,7 +49,8 @@
             "glob": "executors.json",
             "output": "."
           }
-        ]
+        ],
+        "updateBuildableProjectDepsInPackageJson": true
       }
     },
     "version": {

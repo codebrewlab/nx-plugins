@@ -1,7 +1,7 @@
 import * as childProcess from 'child_process';
 import * as path from 'path';
 
-import { logger } from '@nrwl/devkit';
+import { logger } from '@nx/devkit';
 
 import { DestroyExecutorSchema } from './schema';
 import executor from './destroy';

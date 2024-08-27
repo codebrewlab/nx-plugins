@@ -2,7 +2,7 @@ import { exec } from 'child_process';
 
 import { DeployExecutorSchema } from '../executors/deploy/schema';
 import { ParsedExecutorInterface } from '../interfaces/parsed-executor.interface';
-import { logger } from '@nrwl/devkit';
+import { logger } from '@nx/devkit';
 
 export const executorPropKeys = ['stacks'];
 export const LARGE_BUFFER = 1024 * 1000000;

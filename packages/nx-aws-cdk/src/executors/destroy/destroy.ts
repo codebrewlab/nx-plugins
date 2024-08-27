@@ -3,7 +3,7 @@ import * as path from 'path';
 import { DestroyExecutorSchema } from './schema';
 import { createCommand, parseArgs, runCommandProcess } from '../../utils/executor.util';
 import { ParsedExecutorInterface } from '../../interfaces/parsed-executor.interface';
-import type { ExecutorContext } from '@nrwl/devkit';
+import type { ExecutorContext } from '@nx/devkit';
 
 export interface ParsedDestroyExecutorOption extends ParsedExecutorInterface {
   parseArgs?: Record<string, string>;

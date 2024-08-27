@@ -1,5 +1,5 @@
-import { readJson, Tree } from '@nrwl/devkit';
-import { createTreeWithEmptyV1Workspace } from '@nrwl/devkit/testing';
+import { readJson, Tree } from '@nx/devkit';
+import { createTreeWithEmptyV1Workspace } from '@nx/devkit/testing';
 
 import { initGenerator } from './init';
 import { InitGeneratorSchema } from './schema';

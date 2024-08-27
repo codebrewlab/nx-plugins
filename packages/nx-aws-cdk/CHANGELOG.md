@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## 2.0.0 (2024-08-27)
+
 ## 1.0.0 (2024-08-27)
 
 - chore: migrate 14.8.6 ([5ea5d38](https://github.com/codebrewlab/nx-plugins/commit/5ea5d38))

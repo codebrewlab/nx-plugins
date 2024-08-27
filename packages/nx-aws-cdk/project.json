@@ -1,0 +1,71 @@
+{
+  "name": "nx-aws-cdk",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/nx-aws-cdk/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["packages/nx-aws-cdk/**/*.ts"]
+      },
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/packages/nx-aws-cdk"],
+      "options": {
+        "jestConfig": "packages/nx-aws-cdk/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/nx-aws-cdk",
+        "tsConfig": "packages/nx-aws-cdk/tsconfig.lib.json",
+        "packageJson": "packages/nx-aws-cdk/package.json",
+        "main": "packages/nx-aws-cdk/src/index.ts",
+        "assets": [
+          "packages/nx-aws-cdk/*.md",
+          {
+            "input": "./packages/nx-aws-cdk/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./packages/nx-aws-cdk/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./packages/nx-aws-cdk",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./packages/nx-aws-cdk",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "postTargets": ["nx-aws-cdk:github"],
+        "versionTagPrefix": "v"
+      }
+    },
+    "github": {
+      "executor": "@jscutlery/semver:github",
+      "options": {
+        "tag": "${tag}",
+        "notesFile": "packages/nx-aws-cdk/CHANGELOG.md"
+      }
+    }
+  },
+  "tags": []
+}

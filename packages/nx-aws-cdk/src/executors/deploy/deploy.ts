@@ -1,5 +1,5 @@
 import * as path from 'path';
-import { ExecutorContext } from '@nrwl/tao/src/shared/workspace';
+import type { ExecutorContext } from '@nrwl/devkit';
 
 import { DeployExecutorSchema } from './schema';
 import { createCommand, runCommandProcess, parseArgs } from '../../utils/executor.util';
@@ -34,7 +34,7 @@ function normalizeOptions(options: DeployExecutorSchema, context: ExecutorContex
     stacks = options.stacks;
   }
 
-  const { sourceRoot, root } = context?.workspace?.projects[context.projectName];
+  const { sourceRoot, root } = context.workspace.projects[context.projectName];
 
   return {
     ...options,

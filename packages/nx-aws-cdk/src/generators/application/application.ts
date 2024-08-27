@@ -17,7 +17,7 @@ import {
   updateWorkspaceConfiguration,
 } from '@nx/devkit';
 import { jestProjectGenerator } from '@nx/jest';
-import { Linter, lintProjectGenerator } from '@nx/linter';
+import { Linter, lintProjectGenerator } from '@nx/eslint';
 import { runTasksInSerial } from '@nx/workspace/src/utilities/run-tasks-in-serial';
 
 import { ApplicationSchema } from './schema';

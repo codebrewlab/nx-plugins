@@ -19,19 +19,14 @@
       }
     }
   },
-  "targetDependencies": {
-    "build": [
-      {
-        "target": "build",
-        "projects": "dependencies"
-      }
-    ]
-  },
   "workspaceLayout": {
     "appsDir": "e2e",
     "libsDir": "packages"
   },
-  "cli": {
-    "defaultCollection": "@nrwl/workspace"
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"]
+    }
   }
 }

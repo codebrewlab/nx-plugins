@@ -1,5 +1,5 @@
 import { readJson, Tree } from '@nrwl/devkit';
-import { createTreeWithEmptyWorkspace } from '@nrwl/devkit/testing';
+import { createTreeWithEmptyV1Workspace } from '@nrwl/devkit/testing';
 
 import { initGenerator } from './init';
 import { InitGeneratorSchema } from './schema';
@@ -9,7 +9,7 @@ describe('init', () => {
   const options: InitGeneratorSchema = {};
 
   beforeEach(() => {
-    tree = createTreeWithEmptyWorkspace();
+    tree = createTreeWithEmptyV1Workspace();
   });
 
   it('should add aws-cdk dependency', async () => {

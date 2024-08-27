@@ -17,7 +17,7 @@
           "executor": "@nrwl/jest:jest",
           "outputs": ["coverage/packages/nx-aws-cdk"],
           "options": {
-            "jestConfig": "packages/nx-aws-cdk/jest.config.js",
+            "jestConfig": "packages/nx-aws-cdk/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -89,5 +89,6 @@
       "tags": [],
       "implicitDependencies": ["nx-aws-cdk"]
     }
-  }
+  },
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }

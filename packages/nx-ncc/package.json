@@ -4,11 +4,13 @@
   "dependencies": {
     "@nx/devkit": "19.6.3",
     "tslib": "^2.3.0",
-    "@nx/jest": "19.6.3"
+    "@nx/jest": "19.6.3",
+    "@nx/eslint": "19.6.3"
   },
   "type": "commonjs",
   "main": "./src/index.js",
   "typings": "./src/index.d.ts",
   "private": true,
-  "generators": "./generators.json"
+  "generators": "./generators.json",
+  "executors": "./executors.json"
 }

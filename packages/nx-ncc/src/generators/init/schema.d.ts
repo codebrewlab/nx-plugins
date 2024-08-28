@@ -1,3 +1,4 @@
 export interface InitGeneratorSchema {
-  name: string;
+  unitTestRunner?: 'jest' | 'none';
+  skipFormat?: boolean;
 }

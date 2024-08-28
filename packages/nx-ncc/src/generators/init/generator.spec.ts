@@ -1,20 +1,21 @@
 import { createTreeWithEmptyWorkspace } from '@nx/devkit/testing';
-import { Tree, readProjectConfiguration } from '@nx/devkit';
+import { Tree, readJson } from '@nx/devkit';
 
 import { initGenerator } from './generator';
 import { InitGeneratorSchema } from './schema';
 
 describe('init generator', () => {
   let tree: Tree;
-  const options: InitGeneratorSchema = { name: 'test' };
+  const options: InitGeneratorSchema = {};
 
   beforeEach(() => {
     tree = createTreeWithEmptyWorkspace();
   });
 
-  it('should run successfully', async () => {
+  it('should add @vercel/ncc devDependency', async () => {
     await initGenerator(tree, options);
-    const config = readProjectConfiguration(tree, 'test');
-    expect(config).toBeDefined();
+    const packageJson = readJson(tree, 'package.json');
+
+    expect(packageJson.devDependencies['@vercel/ncc']).toBeDefined();
   });
 });

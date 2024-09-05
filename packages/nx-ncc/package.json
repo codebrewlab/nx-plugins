@@ -2,10 +2,17 @@
   "name": "@codebrew/nx-ncc",
   "version": "0.0.1",
   "dependencies": {
-    "@nx/devkit": "19.6.3",
+    "@nx/js": "19.6.3",
+    "@nrwl/devkit": "19.6.3",
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
     "tslib": "^2.3.0",
-    "@nx/jest": "19.6.3",
-    "@nx/eslint": "19.6.3"
+    "@nx/js": "^19.6.3"
+  },
+  "peerDependencies": {
+    "@nx/devkit": "^19.6.3",
+    "@nx/jest": "^19.6.3"
   },
   "type": "commonjs",
   "main": "./src/index.js",

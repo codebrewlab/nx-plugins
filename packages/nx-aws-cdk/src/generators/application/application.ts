@@ -8,20 +8,17 @@ import {
   getWorkspaceLayout,
   joinPathFragments,
   names,
-  NxJsonProjectConfiguration,
   offsetFromRoot,
   ProjectConfiguration,
-  readWorkspaceConfiguration,
+  runTasksInSerial,
   Tree,
   updateJson,
-  updateWorkspaceConfiguration,
-} from '@nrwl/devkit';
-import { jestProjectGenerator } from '@nrwl/jest';
-import { Linter, lintProjectGenerator } from '@nrwl/linter';
-import { runTasksInSerial } from '@nrwl/workspace/src/utilities/run-tasks-in-serial';
+} from '@nx/devkit';
+import { Linter, lintProjectGenerator } from '@nx/eslint';
 
 import { ApplicationSchema } from './schema';
 import { initGenerator } from '../init/init';
+import configurationGenerator from '@nx/jest/src/generators/configuration/configuration';
 
 interface NormalizedSchema extends ApplicationSchema {
   projectName: string;
@@ -102,7 +99,7 @@ export async function applicationGenerator(host: Tree, options: ApplicationSchem
 
   tasks.push(initTask);
 
-  const project: ProjectConfiguration & NxJsonProjectConfiguration = {
+  const project: ProjectConfiguration = {
     root: normalizedOptions.projectRoot,
     projectType: 'application',
     sourceRoot: `${normalizedOptions.projectRoot}/src`,
@@ -119,9 +116,6 @@ export async function applicationGenerator(host: Tree, options: ApplicationSchem
     tags: normalizedOptions.parsedTags,
   };
   addProjectConfiguration(host, normalizedOptions.projectName, project);
-  const workspace = readWorkspaceConfiguration(host);
-
-  updateWorkspaceConfiguration(host, workspace);
   addFiles(host, normalizedOptions);
 
   if (normalizedOptions.linter !== Linter.None) {
@@ -131,7 +125,7 @@ export async function applicationGenerator(host: Tree, options: ApplicationSchem
   }
 
   if (normalizedOptions.unitTestRunner === 'jest') {
-    const jestTask = await jestProjectGenerator(host, {
+    const jestTask = await configurationGenerator(host, {
       project: normalizedOptions.projectName,
       setupFile: 'none',
       skipSerializers: true,

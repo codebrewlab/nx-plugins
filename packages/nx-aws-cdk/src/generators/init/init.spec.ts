@@ -1,5 +1,5 @@
-import { readJson, Tree } from '@nrwl/devkit';
-import { createTreeWithEmptyWorkspace } from '@nrwl/devkit/testing';
+import { readJson, Tree } from '@nx/devkit';
+import { createTreeWithEmptyWorkspace } from '@nx/devkit/testing';
 
 import { initGenerator } from './init';
 import { InitGeneratorSchema } from './schema';
@@ -16,7 +16,8 @@ describe('init', () => {
     await initGenerator(tree, options);
     const packageJson = readJson(tree, 'package.json');
 
-    expect(packageJson.dependencies['@aws-cdk/core']).toBeDefined();
-    expect(packageJson.dependencies['@aws-cdk/assert']).toBeDefined();
+    expect(packageJson.dependencies['aws-cdk']).toBeDefined();
+    expect(packageJson.dependencies['aws-cdk-lib']).toBeDefined();
+    expect(packageJson.dependencies['constructs']).toBeDefined();
   });
 });

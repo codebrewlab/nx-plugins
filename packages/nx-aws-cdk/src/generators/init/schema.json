@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/schema",
-  "cli": "nx",
   "id": "AwsCdkInit",
   "title": "Add AWS CDK Schematics",
   "type": "object",

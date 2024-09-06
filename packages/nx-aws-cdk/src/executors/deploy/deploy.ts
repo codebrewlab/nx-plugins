@@ -1,9 +1,10 @@
 import * as path from 'path';
-import { ExecutorContext } from '@nrwl/tao/src/shared/workspace';
+import type { ExecutorContext } from '@nx/devkit';
 
 import { DeployExecutorSchema } from './schema';
-import { createCommand, runCommandProcess, parseArgs } from '../../utils/executor.util';
+import { createCommand, parseArgs } from '../../utils/executor.util';
 import { ParsedExecutorInterface } from '../../interfaces/parsed-executor.interface';
+import { runCommandProcess } from '@codebrew/utils';
 
 export interface ParsedDeployExecutorOption extends ParsedExecutorInterface {
   parseArgs?: Record<string, string>;
@@ -34,7 +35,7 @@ function normalizeOptions(options: DeployExecutorSchema, context: ExecutorContex
     stacks = options.stacks;
   }
 
-  const { sourceRoot, root } = context?.workspace?.projects[context.projectName];
+  const { sourceRoot, root } = context.workspace.projects[context.projectName];
 
   return {
     ...options,

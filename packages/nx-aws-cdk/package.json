@@ -1,6 +1,6 @@
 {
   "name": "@codebrew/nx-aws-cdk",
-  "version": "1.0.3",
+  "version": "0.0.0-e2e",
   "main": "src/index.js",
   "generators": "./generators.json",
   "executors": "./executors.json",
@@ -20,5 +20,6 @@
     "type": "git",
     "url": "git@github.com:codebrewlab/nx-plugins.git"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {}
 }

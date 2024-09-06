@@ -1,0 +1,21 @@
+{
+  "name": "nx-aws-cdk-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "e2e/nx-aws-cdk-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/jest:jest",
+      "options": {
+        "npmPackageName": "@codebrew/nx-aws-cdk",
+        "pluginOutputPath": "dist/packages/nx-aws-cdk",
+        "jestConfig": "e2e/nx-aws-cdk-e2e/jest.config.js",
+        "runInBand": true,
+        "passWithNoTests": false
+      },
+      "dependsOn": ["nx-aws-cdk:build"]
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["nx-aws-cdk"]
+}

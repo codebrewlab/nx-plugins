@@ -1,6 +1,6 @@
 import * as path from 'path';
 import * as childProcess from 'child_process';
-import { logger } from '@nrwl/devkit';
+import { logger } from '@nx/devkit';
 
 import executor from './deploy';
 import { DeployExecutorSchema } from './schema';

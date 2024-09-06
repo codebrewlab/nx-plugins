@@ -1,4 +1,4 @@
-import { ExecutorContext } from '@nrwl/tao/src/shared/workspace';
+import type { ExecutorContext } from '@nrwl/devkit';
 
 export function mockExecutorContext(executorName: string, workspaceVersion = 2): ExecutorContext {
   return {

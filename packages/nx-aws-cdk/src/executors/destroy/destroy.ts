@@ -1,9 +1,10 @@
 import * as path from 'path';
 
 import { DestroyExecutorSchema } from './schema';
-import { createCommand, parseArgs, runCommandProcess } from '../../utils/executor.util';
+import { createCommand, parseArgs } from '../../utils/executor.util';
 import { ParsedExecutorInterface } from '../../interfaces/parsed-executor.interface';
 import type { ExecutorContext } from '@nx/devkit';
+import { runCommandProcess } from '@codebrew/utils';
 
 export interface ParsedDestroyExecutorOption extends ParsedExecutorInterface {
   parseArgs?: Record<string, string>;

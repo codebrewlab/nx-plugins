@@ -2,8 +2,9 @@ import * as path from 'path';
 import type { ExecutorContext } from '@nx/devkit';
 
 import { DeployExecutorSchema } from './schema';
-import { createCommand, runCommandProcess, parseArgs } from '../../utils/executor.util';
+import { createCommand, parseArgs } from '../../utils/executor.util';
 import { ParsedExecutorInterface } from '../../interfaces/parsed-executor.interface';
+import { runCommandProcess } from '@codebrew/utils';
 
 export interface ParsedDeployExecutorOption extends ParsedExecutorInterface {
   parseArgs?: Record<string, string>;

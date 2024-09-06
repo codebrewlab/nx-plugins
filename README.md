@@ -21,6 +21,7 @@ A collection of third-party Nx plugins.
 | Plugin                                                    | Description                                                                                   |
 | --------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
 | [`@codebrew/nx-aws-cdk`](./packages/nx-aws-cdk/README.md) | An Nx plugin for developing [aws-cdk](https://docs.aws.amazon.com/cdk/latest/guide/home.html) |
+| [`@codebrew/nx-ncc`](./packages/nx-ncc/README.md)         | nx plugin for [@vercel/ncc](https://github.com/vercel/ncc)                                    |
 
 ## Maintainers
 

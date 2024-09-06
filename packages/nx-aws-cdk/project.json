@@ -61,6 +61,13 @@
         "tag": "${tag}",
         "notesFile": "packages/nx-aws-cdk/CHANGELOG.md"
       }
+    },
+    "npm": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public",
+        "distFolderPath": "dist/packages/nx-aws-cdk"
+      }
     }
   },
   "tags": []

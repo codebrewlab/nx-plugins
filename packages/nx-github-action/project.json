@@ -1,0 +1,51 @@
+{
+  "name": "nx-github-action",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/nx-github-action/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/nx-github-action",
+        "main": "packages/nx-github-action/src/index.ts",
+        "tsConfig": "packages/nx-github-action/tsconfig.lib.json",
+        "assets": [
+          "packages/nx-github-action/*.md",
+          {
+            "input": "./packages/nx-github-action/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./packages/nx-github-action/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./packages/nx-github-action",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./packages/nx-github-action",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "packages/nx-github-action/jest.config.ts"
+      }
+    }
+  }
+}

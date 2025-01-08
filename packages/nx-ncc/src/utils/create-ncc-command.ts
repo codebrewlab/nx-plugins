@@ -2,7 +2,7 @@ import { NormalizedExecutorSchemaInterface } from '../interfaces/normalized-exec
 import { normalizeArguments } from './normalize-arguments';
 
 export const createNccCommand = (command: string, options: NormalizedExecutorSchemaInterface) => {
-  const commands = [`ncc ${command} ${options.main}`];
+  const commands = [`npx ncc ${command} ${options.main}`];
 
   const args = normalizeArguments(options);
 

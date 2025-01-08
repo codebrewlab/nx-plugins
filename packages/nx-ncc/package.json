@@ -1,6 +1,6 @@
 {
   "name": "@codebrew/nx-ncc",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {
     "@nx/js": "19.6.3",
     "@nrwl/devkit": "19.6.3",
